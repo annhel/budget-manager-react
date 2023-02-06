@@ -12,7 +12,7 @@ export function BudgetExpenseInputs(props:BudgetProps){
         <section className="site-inputs">
             <div className="input">
                 <input type="number" placeholder="Insert Budget..." onChange={event=>props.dispatch({type:"SET_BUDGET", payload: Number(event.target.value)})}/>
-                <button onClick={()=>props.dispatch({type: "CREATE_BUDGET"})}>Set Budget</button>
+                <button onClick={()=>props.dispatch({type: "SET_REMAINDER"})}>Set Budget</button>
             </div>
             <div>
                 <select id="select"name="essential" onChange={(e)=>props.dispatch({type:"SET_URGENCY", payload: e.target.value})}>

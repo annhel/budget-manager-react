@@ -24,14 +24,14 @@ export type BudgetExpenseState = {
 
 // create your actions
 export type SetBudget = {type:"SET_BUDGET", payload: number};
-export type CreateBudget = {type:"CREATE_BUDGET"}
+export type SetRemainder = {type:"SET_REMAINDER"}
 export type SetExpenseName = {type:"SET_EXPENSE_NAME", payload: string};
 export type SetExpenseCost = {type:"SET_EXPENSE_COST", payload: number};
 export type SetExpenseUrgency = {type:"SET_URGENCY", payload: string};
 export type CreateExpense = {type:"CREATE_EXPENSE"};
 export type MarkPaid = {type:"MARK_PAID", payload: number};
 export type RemoveExpense = {type: "REMOVE", payload: string};
-export type BudgetExpenseActions = SetBudget | SetExpenseName | SetExpenseCost | SetExpenseUrgency | CreateExpense | MarkPaid | CreateBudget | RemoveExpense
+export type BudgetExpenseActions = SetBudget | SetExpenseName | SetExpenseCost | SetExpenseUrgency | CreateExpense | MarkPaid | SetRemainder | RemoveExpense
 
 //create reducer to handle actions
 export function budgetExpenseReducer(state: BudgetExpenseState, action:BudgetExpenseActions): BudgetExpenseState{
@@ -41,7 +41,7 @@ export function budgetExpenseReducer(state: BudgetExpenseState, action:BudgetExp
         case "SET_BUDGET":
             newState.budget = action.payload;
             return newState;
-        case "CREATE_BUDGET": 
+        case "SET_REMAINDER": 
             if(newState.paid.length === 0){
                 newState.budgetRemainder = newState.budget
                 return newState
