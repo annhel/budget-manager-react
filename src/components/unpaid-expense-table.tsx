@@ -1,4 +1,5 @@
 import { BudgetExpenseActions, BudgetExpenseState } from "../reducer/budget-manager-reducer"
+import '../App.css'
 
 export type BudgetProps = {
     budgetState: BudgetExpenseState,
@@ -7,13 +8,20 @@ export type BudgetProps = {
 
 export function UnpaidExpenseTable(props:BudgetProps){
     return<>
+    <section>
+        <div className="wrapper">
         <h3>Budget Remaining: {props.budgetState.budgetRemainder}</h3>
-    <table>
+        </div>
+    </section>
+
+    <section>
+        <div className="wrapper">
+        <table className="table">
         <thead>
-            <tr><th colSpan={4}>Unpaid Expenses</th></tr>
-            <tr><th>Urgent</th><th>Name</th><th>Cost</th> <th>Status</th></tr>
+            <tr><th colSpan={5} className="table-title">Unpaid Expenses</th></tr>
+            <tr className="table-subtitle"><th>Essential</th><th>Name</th><th>Cost</th> <th>Status</th> <th>Remove</th></tr>
         </thead>
-        <tbody>
+        <tbody className="table-body">
             {props.budgetState.unpaid.map(e =>
             <tr>
                 <td>{e.urgent}</td>
@@ -25,10 +33,16 @@ export function UnpaidExpenseTable(props:BudgetProps){
                         <option value={e.id}>Paid</option>
                     </select>
                 </td>
+                <td>
+                    <button className="delButton" onClick={() => props.dispatch({type:"REMOVE", payload: e.id.toString()})}>X</button>
+                </td>
             </tr>
-             )}
+            )}
         </tbody>
-    </table>
+        </table>
+        <h3>Total Amount Unpaid: ${props.budgetState.totalUnpaid}</h3>
+        </div>
+    </section>
 
     </>
 }

@@ -12,6 +12,8 @@ const initialState: BudgetExpenseState = {
     expenseName: "",
     expenseCost: 0,
     expenseUrgency: "",
+    totalPaid:0,
+    totalUnpaid: 0,
     unpaid: [],
     paid: []
 }
@@ -22,8 +24,10 @@ export function BudgetManager(){
     const [budgetState, dispatch] = useReducer(budgetExpenseReducer, initialState);
 
     return<>
+    <div className="container">
     <BudgetExpenseInputs budgetState ={budgetState} dispatch = {dispatch}/>
     <UnpaidExpenseTable budgetState ={budgetState} dispatch = {dispatch}/>
-    <PaidExpenseTable budgetState={budgetState}/>
+    <PaidExpenseTable budgetState={budgetState} dispatch = {dispatch}/>
+    </div>
     </>
 }

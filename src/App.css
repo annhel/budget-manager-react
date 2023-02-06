@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 680px;
+    margin: auto;
+    text-overflow: ellipsis;
+    background-color: #cfcfcf;
+    border-radius: 20px;
+}
+
+.site-title{
+    text-align: center;
+}
+
+.site-inputs{
+    text-align: center;
+}
+.input{
+    text-align: center;
+}
+
+.input-table{
+    text-align: center;
+}
+
+section{
+    padding-block: 2rem;
+    text-align: center;
+    margin-inline: auto;
+}
+
+table{
+    color: rgb(255, 255, 255);
+    background-color: #496196;
+    border: 3px solid #2C345C;
+    border-radius: 5px;
+    
+}
+th{
+    border: 2px solid #2C345C; 
+    border-radius: 5px; 
+    padding: 10px;
+}
+td{
+    border: 2px solid #2C345C;
+}
+
+h1, h3{
+    color: white;
+    padding: 10px;
+    background-color: #2C345C;
+    border-radius: 15px;
+}
+  
