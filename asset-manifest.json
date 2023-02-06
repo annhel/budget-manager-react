@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/budget-manager-react/static/css/main.b67d1c61.css",
-    "main.js": "/budget-manager-react/static/js/main.b9d868bd.js",
+    "main.js": "/budget-manager-react/static/js/main.fcebf20c.js",
     "index.html": "/budget-manager-react/index.html",
     "main.b67d1c61.css.map": "/budget-manager-react/static/css/main.b67d1c61.css.map",
-    "main.b9d868bd.js.map": "/budget-manager-react/static/js/main.b9d868bd.js.map"
+    "main.fcebf20c.js.map": "/budget-manager-react/static/js/main.fcebf20c.js.map"
   },
   "entrypoints": [
     "static/css/main.b67d1c61.css",
-    "static/js/main.b9d868bd.js"
+    "static/js/main.fcebf20c.js"
   ]
 }
